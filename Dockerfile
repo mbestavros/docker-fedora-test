@@ -1,10 +1,11 @@
 FROM quay.io/enarx/fedora
 
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-RUN echo 'export PATH="~/.cargo/bin:$PATH"' >> ~/.bashrc
+ENV PATH /root/.cargo/bin:$PATH
 
-RUN ~/.cargo/bin/rustup target add x86_64-unknown-linux-musl
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y -q
 
-RUN ~/.cargo/bin/rustup component add rustfmt
+RUN rustup target add x86_64-unknown-linux-musl
 
-RUN ~/.cargo/bin/cargo install --force cargo-audit
+RUN rustup component add rustfmt
+
+RUN cargo install --force cargo-audit
