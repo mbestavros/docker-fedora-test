@@ -5,4 +5,4 @@ RUN echo 'export PATH="~/.cargo/bin:$PATH"' >> ~/.bashrc
 
 RUN ~/.cargo/bin/rustup target add x86_64-unknown-linux-musl
 
-RUN ~/.cargo/bin/cargo install cargo-audit
+RUN ~/.cargo/bin/cargo install --force cargo-audit
