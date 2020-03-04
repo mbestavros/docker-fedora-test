@@ -6,3 +6,5 @@ FROM quay.io/enarx/fedora
 RUN cargo install --force cargo-audit
 
 RUN cargo install --force toml-cli
+
+RUN cargo install --force cargo-deny
