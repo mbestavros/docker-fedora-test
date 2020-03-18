@@ -4,7 +4,5 @@ FROM quay.io/enarx/fedora
 # Development-only utilities belong in the parent container.
 
 RUN cargo install --force cargo-audit
-
-RUN cargo install --force toml-cli
-
 RUN cargo install --force cargo-deny
+RUN cargo install --force toml-cli
