@@ -8,4 +8,4 @@ RUN cargo install --force cargo-deny
 RUN cargo install --force toml-cli
 
 # Install PyGithub
-RUN pip install PyGithub
+RUN python3 -m pip install PyGithub
