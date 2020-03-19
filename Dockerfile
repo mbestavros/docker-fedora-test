@@ -6,3 +6,6 @@ FROM quay.io/enarx/fedora
 RUN cargo install --force cargo-audit
 RUN cargo install --force cargo-deny
 RUN cargo install --force toml-cli
+
+# Install PyGithub
+RUN pip install PyGithub
